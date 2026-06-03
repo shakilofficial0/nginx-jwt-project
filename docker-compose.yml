@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nginx_jwt
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx/njs/auth.js:/etc/nginx/njs/auth.js:ro
+      - /var/www/html/images:/var/www/html/images:ro
+    restart: unless-stopped

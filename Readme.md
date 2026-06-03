@@ -88,7 +88,7 @@ Client Request
 The authentication settings are defined at the top of `nginx/njs/auth.js`:
 
 ```js
-var JWT_SECRET = "shakilofficial0";
+var JWT_SECRET = "i-hate-my-job-because-nginx-jwt-does-work";
 var JWT_ALGORITHM = "HS256";
 ```
 

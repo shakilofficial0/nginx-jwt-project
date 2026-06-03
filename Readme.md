@@ -147,7 +147,7 @@ import hmac, hashlib, base64, json, time
 def b64url(data: bytes) -> str:
     return base64.urlsafe_b64encode(data).rstrip(b'=').decode()
 
-secret  = "shakilofficial0"
+secret  = "i-hate-my-job-because-nginx-jwt-does-work"
 header  = b64url(json.dumps({"alg": "HS256", "typ": "JWT"}).encode())
 payload = b64url(json.dumps({
     "user_id": "42",

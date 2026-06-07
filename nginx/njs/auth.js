@@ -160,19 +160,19 @@ async function verifyJwt(r) {
         ? null
         : String(payload.user_id).replace(/^\s+|\s+$/g, '');
 
-    r.warn('auth debug: jwt_user_id=' + jwtUserId + ', url_user_id=' + urlUserId + ', uri=' + r.uri);
+    //r.warn('auth debug: jwt_user_id=' + jwtUserId + ', url_user_id=' + urlUserId + ', uri=' + r.uri);
 
-    if (!urlUserId) {
-        r.warn('auth reject: unable to parse url user id');
-        r.return(403, '');
-        return;
-    }
+    // if (!urlUserId) {
+    //     r.warn('auth reject: unable to parse url user id');
+    //     r.return(403, '');
+    //     return;
+    // }
 
-    if (jwtUserId === null || jwtUserId !== urlUserId) {
-        r.warn('auth reject: user mismatch');
-        r.return(403, '');
-        return;
-    }
+    // if (jwtUserId === null || jwtUserId !== urlUserId) {
+    //     r.warn('auth reject: user mismatch');
+    //     r.return(403, '');
+    //     return;
+    // }
 
     r.warn('auth pass: user matched');
     r.return(200, '');

@@ -174,8 +174,11 @@ async function verifyJwt(r) {
     //     return;
     // }
 
-    r.warn('auth pass: user matched');
-    r.return(200, '');
+    //r.warn('auth pass: user matched');
+    //r.return(200, '');
+
+    // retuen 200 with payload/ r.variables
+    r.return(200, JSON.stringify(payload));
 }
 
 export default { verifyJwt: verifyJwt };
